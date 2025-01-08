@@ -19,19 +19,19 @@ def _create_hash(val: Union[str, bytes, BinaryIO], hash_func: Callable) -> str:
     return _hash_file(val, hash_obj)
 
 def md5(val: Union[str, bytes, BinaryIO]) -> str:
-    return _create_hash(val, hashlib.md5).upper()
+    return _create_hash(val, hashlib.md5)
 
 def sha1(val: Union[str, bytes, BinaryIO]) -> str:
-    return _create_hash(val, hashlib.sha1).upper()
+    return _create_hash(val, hashlib.sha1)
 
 def sha224(val: Union[str, bytes, BinaryIO]) -> str:
-    return _create_hash(val, hashlib.sha224).upper()
+    return _create_hash(val, hashlib.sha224)
 
 def sha256(val: Union[str, bytes, BinaryIO]) -> str:
-    return _create_hash(val, hashlib.sha256).upper()
+    return _create_hash(val, hashlib.sha256)
 
 def sha384(val: Union[str, bytes, BinaryIO]) -> str:
-    return _create_hash(val, hashlib.sha384).upper()
+    return _create_hash(val, hashlib.sha384)
 
 def sha512(val: Union[str, bytes, BinaryIO]) -> str:
-    return _create_hash(val, hashlib.sha512).upper()
+    return _create_hash(val, hashlib.sha512)

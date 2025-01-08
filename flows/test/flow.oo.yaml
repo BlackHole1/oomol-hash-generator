@@ -5,6 +5,8 @@ nodes:
     inputs_from:
       - handle: input
         value: oomol
+      - handle: lowercased
+        value: false
   - task:
       ui:
         default_width: 450
@@ -51,10 +53,7 @@ nodes:
             type: string
           value: ""
       outputs_def:
-        - handle: output
-          description: Output
-          json_schema:
-            type: string
+        []
       executor:
         name: nodejs
         options:
@@ -108,3 +107,102 @@ nodes:
         from_node:
           - node_id: +javascript#2
             output_handle: output
+      - handle: lowercased
+        value: false
+  - node_id: hash_generator#2
+    node_type: task_node
+    title: "Hash Generator With String #2"
+    inputs_from:
+      - handle: input
+        value: oomol
+      - handle: lowercased
+        value: true
+    task: self::hash_generator_string
+  - node_id: +javascript#4
+    node_type: task_node
+    title: "JavaScript #3"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: md5
+        from_node:
+          - node_id: hash_generator_file#4
+            output_handle: MD5
+          - node_id: hash_generator#2
+            output_handle: MD5
+      - handle: sha1
+        from_node:
+          - node_id: hash_generator_file#4
+            output_handle: SHA1
+          - node_id: hash_generator#2
+            output_handle: SHA1
+      - handle: sha224
+        from_node:
+          - node_id: hash_generator_file#4
+            output_handle: SHA224
+          - node_id: hash_generator#2
+            output_handle: SHA224
+      - handle: sha256
+        from_node:
+          - node_id: hash_generator_file#4
+            output_handle: SHA256
+          - node_id: hash_generator#2
+            output_handle: SHA256
+      - handle: sha384
+        from_node:
+          - node_id: hash_generator_file#4
+            output_handle: SHA384
+          - node_id: hash_generator#2
+            output_handle: SHA384
+      - handle: sha512
+        from_node:
+          - node_id: hash_generator_file#4
+            output_handle: SHA512
+          - node_id: hash_generator#2
+            output_handle: SHA512
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: md5
+          description: Input
+          json_schema:
+            type: string
+        - handle: sha1
+          json_schema:
+            type: string
+          value: ""
+        - handle: sha224
+          json_schema:
+            type: string
+          value: ""
+        - handle: sha256
+          json_schema:
+            type: string
+          value: ""
+        - handle: sha384
+          json_schema:
+            type: string
+          value: ""
+        - handle: sha512
+          json_schema:
+            type: string
+          value: ""
+      outputs_def:
+        []
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#4.js
+          spawn: false
+  - node_id: hash_generator_file#4
+    node_type: task_node
+    title: "Hash Generator With File #4"
+    inputs_from:
+      - handle: input
+        value: ""
+        from_node:
+          - node_id: +javascript#2
+            output_handle: output
+      - handle: lowercased
+        value: true
+    task: self::hash_generator_file

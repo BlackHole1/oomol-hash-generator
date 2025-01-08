@@ -7,6 +7,10 @@ inputs_def:
     json_schema:
       {}
     value: ""
+  - handle: lowercased
+    json_schema:
+      type: boolean
+    value: false
 outputs_def:
   - handle: MD5
     json_schema:

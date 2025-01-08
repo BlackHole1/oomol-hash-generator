@@ -3,8 +3,8 @@
     "hash_generator#1": {
       "rfNode": {
         "position": {
-          "x": 484,
-          "y": 539.5
+          "x": 515,
+          "y": 465
         }
       }
     },
@@ -12,8 +12,8 @@
       "contentWidth": 450.53659626588984,
       "rfNode": {
         "position": {
-          "x": 1.936285090042361,
-          "y": 69.31440677966101
+          "x": 0,
+          "y": 421.5
         }
       }
     },
@@ -21,7 +21,7 @@
       "contentWidth": 626.09375,
       "rfNode": {
         "position": {
-          "x": 968,
+          "x": 999,
           "y": 0
         }
       }
@@ -29,8 +29,33 @@
     "hash_generator_file#3": {
       "rfNode": {
         "position": {
-          "x": 484,
-          "y": 146.5
+          "x": 515,
+          "y": 22.5
+        }
+      }
+    },
+    "hash_generator#2": {
+      "rfNode": {
+        "position": {
+          "x": 515,
+          "y": 1327.5
+        }
+      }
+    },
+    "+javascript#4": {
+      "contentWidth": 626.09375,
+      "rfNode": {
+        "position": {
+          "x": 999,
+          "y": 885
+        }
+      }
+    },
+    "hash_generator_file#4": {
+      "rfNode": {
+        "position": {
+          "x": 515,
+          "y": 885
         }
       }
     }
