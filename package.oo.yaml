@@ -1,0 +1,14 @@
+version: 0.0.1
+scripts:
+  # Script executed when the container is first loaded
+  # eg: bootstrap: pip install pandas
+  bootstrap: |
+    npm install
+    pip install -r requirements.txt
+icon: ":twemoji:key:currentColor:"
+name: hash-generator
+releaseType: package
+repository: https://github.com/BlackHole1/oomol-hash-generator
+releaseNotes: First release
+description: Hash Generator
+displayName: Hash Generator

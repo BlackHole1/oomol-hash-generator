@@ -1,0 +1,110 @@
+nodes:
+  - task: self::hash_generator_string
+    title: "Hash Generator With String #1"
+    node_id: hash_generator#1
+    inputs_from:
+      - handle: input
+        value: oomol
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        []
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#2.js
+    title: "JavaScript #2"
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#2
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: md5
+          description: Input
+          json_schema:
+            type: string
+        - handle: sha1
+          json_schema:
+            type: string
+          value: ""
+        - handle: sha224
+          json_schema:
+            type: string
+          value: ""
+        - handle: sha256
+          json_schema:
+            type: string
+          value: ""
+        - handle: sha384
+          json_schema:
+            type: string
+          value: ""
+        - handle: sha512
+          json_schema:
+            type: string
+          value: ""
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#1.js
+    title: "JavaScript #1"
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#1
+    inputs_from:
+      - handle: md5
+        from_node:
+          - node_id: hash_generator_file#3
+            output_handle: MD5
+          - node_id: hash_generator#1
+            output_handle: MD5
+      - handle: sha1
+        from_node:
+          - node_id: hash_generator_file#3
+            output_handle: SHA1
+          - node_id: hash_generator#1
+            output_handle: SHA1
+      - handle: sha224
+        from_node:
+          - node_id: hash_generator_file#3
+            output_handle: SHA224
+          - node_id: hash_generator#1
+            output_handle: SHA224
+      - handle: sha256
+        from_node:
+          - node_id: hash_generator_file#3
+            output_handle: SHA256
+          - node_id: hash_generator#1
+            output_handle: SHA256
+      - handle: sha384
+        from_node:
+          - node_id: hash_generator_file#3
+            output_handle: SHA384
+          - node_id: hash_generator#1
+            output_handle: SHA384
+      - handle: sha512
+        from_node:
+          - node_id: hash_generator_file#3
+            output_handle: SHA512
+          - node_id: hash_generator#1
+            output_handle: SHA512
+  - task: self::hash_generator_file
+    title: "Hash Generator With File #3"
+    node_id: hash_generator_file#3
+    inputs_from:
+      - handle: input
+        value: ""
+        from_node:
+          - node_id: +javascript#2
+            output_handle: output

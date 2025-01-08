@@ -1,0 +1,38 @@
+{
+  "nodes": {
+    "hash_generator#1": {
+      "rfNode": {
+        "position": {
+          "x": 484,
+          "y": 539.5
+        }
+      }
+    },
+    "+javascript#2": {
+      "contentWidth": 450.53659626588984,
+      "rfNode": {
+        "position": {
+          "x": 1.936285090042361,
+          "y": 69.31440677966101
+        }
+      }
+    },
+    "+javascript#1": {
+      "contentWidth": 626.09375,
+      "rfNode": {
+        "position": {
+          "x": 968,
+          "y": 0
+        }
+      }
+    },
+    "hash_generator_file#3": {
+      "rfNode": {
+        "position": {
+          "x": 484,
+          "y": 146.5
+        }
+      }
+    }
+  }
+}

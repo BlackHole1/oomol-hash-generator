@@ -1,0 +1,29 @@
+executor:
+  name: python
+  options:
+    entry: __init__.py
+inputs_def:
+  - handle: input
+    json_schema:
+      {}
+    value: ""
+outputs_def:
+  - handle: MD5
+    json_schema:
+      type: string
+  - handle: SHA1
+    json_schema:
+      type: string
+  - handle: SHA224
+    json_schema:
+      type: string
+  - handle: SHA256
+    json_schema:
+      type: string
+  - handle: SHA384
+    json_schema:
+      type: string
+  - handle: SHA512
+    json_schema:
+      type: string
+title: Hash Generator With String
