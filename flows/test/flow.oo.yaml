@@ -4,7 +4,6 @@ nodes:
     node_id: hash_generator#1
     inputs_from:
       - handle: input
-        value: oomol
       - handle: lowercased
         value: false
   - task:
@@ -114,7 +113,6 @@ nodes:
     title: "Hash Generator With String #2"
     inputs_from:
       - handle: input
-        value: oomol
       - handle: lowercased
         value: true
     task: self::hash_generator_string

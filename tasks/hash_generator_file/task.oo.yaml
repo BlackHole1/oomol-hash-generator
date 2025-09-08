@@ -4,31 +4,46 @@ executor:
     entry: __init__.py
 inputs_def:
   - handle: input
+    description: "File path to generate hash values from. Select any file using the
+      file picker."
     json_schema:
       type: string
       ui:widget: file
     value: ""
   - handle: lowercased
+    description: "Whether to output hash values in lowercase format. When false,
+      outputs uppercase."
     json_schema:
       type: boolean
     value: false
 outputs_def:
   - handle: MD5
+    description: "MD5 hash value of the selected file (32 characters)"
     json_schema:
       type: string
   - handle: SHA1
+    description: "SHA-1 hash value of the selected file (40 characters)"
     json_schema:
       type: string
   - handle: SHA224
+    description: "SHA-224 hash value of the selected file (56 characters)"
     json_schema:
       type: string
   - handle: SHA256
+    description: "SHA-256 hash value of the selected file (64 characters)"
     json_schema:
       type: string
   - handle: SHA384
+    description: "SHA-384 hash value of the selected file (96 characters)"
     json_schema:
       type: string
   - handle: SHA512
+    description: "SHA-512 hash value of the selected file (128 characters)"
     json_schema:
       type: string
 title: Hash Generator With File
+icon: ":carbon:document-security:"
+description: "Generate multiple hash values (MD5, SHA-1, SHA-224, SHA-256,
+  SHA-384, SHA-512) from any file. Useful for file integrity verification,
+  security applications, and creating file fingerprints. Files are processed
+  efficiently in chunks for optimal performance."
