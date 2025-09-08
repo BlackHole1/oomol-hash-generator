@@ -102,17 +102,3 @@ This package is designed for the OOMOL platform. Simply install it through the O
 ## Screenshot
 
 ![](./static/screenshot.png)
-
-## Repository
-
-- **GitHub**: [https://github.com/BlackHole1/oomol-hash-generator](https://github.com/BlackHole1/oomol-hash-generator)
-- **Version**: 0.0.1
-- **License**: Check repository for license information
-
-## Support
-
-For issues, feature requests, or contributions, please visit the GitHub repository or contact the OOMOL community.
-
----
-
-*Built for OOMOL Platform - Making hash generation simple and accessible for everyone.*
